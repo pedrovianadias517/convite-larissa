@@ -10,9 +10,20 @@
             text-align: center;
             margin-top: 50px;
         }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #sim {
+            margin-top: 20px;
+        }
+        #nao {
+            margin-top: 100px; /* Posiciona o botão "Não" mais para baixo */
+        }
         #nao:hover {
             position: absolute;
-            top: calc(50% - 20px);
+            top: calc(50% + 100px); /* Move para baixo ao fugir */
             left: calc(50% - 50px);
             transform: translate(-50%, -50%);
         }
@@ -21,6 +32,7 @@
 <body>
     <h1>Quer sair comigo?</h1>
     <button id="sim" onclick="responder('sim')">Sim</button>
+    <br>
     <button id="nao">Não</button>
 
     <script>
@@ -28,7 +40,7 @@
 
         naoBtn.addEventListener("mouseover", () => {
             const x = Math.random() * window.innerWidth * 0.8;
-            const y = Math.random() * window.innerHeight * 0.8;
+            const y = Math.random() * window.innerHeight * 0.8 + 100; // Garante que sempre fique mais abaixo
             naoBtn.style.position = "absolute";
             naoBtn.style.left = `${x}px`;
             naoBtn.style.top = `${y}px`;
