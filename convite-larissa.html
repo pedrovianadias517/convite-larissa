@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para Larissa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #nao:hover {
+            position: absolute;
+            top: calc(50% - 20px);
+            left: calc(50% - 50px);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer sair comigo?</h1>
+    <button id="sim" onclick="responder('sim')">Sim</button>
+    <button id="nao">Não</button>
+
+    <script>
+        const naoBtn = document.getElementById("nao");
+
+        naoBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * window.innerWidth * 0.8;
+            const y = Math.random() * window.innerHeight * 0.8;
+            naoBtn.style.position = "absolute";
+            naoBtn.style.left = `${x}px`;
+            naoBtn.style.top = `${y}px`;
+        });
+
+        function responder(resposta) {
+            if (resposta === 'sim') {
+                alert('Sabia que não iria resistir rsrs, mais informações no WhatsApp!!');
+            }
+        }
+    </script>
+</body>
+</html>
